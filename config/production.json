@@ -1,4 +1,5 @@
 {
-  "host": "project-management-app.feathersjs.com",
-  "port": "PORT"
+  "host": "VIRTUAL_HOST",
+  "port": "PORT",
+  "mongodb": "mongodb://mongo:27017/project_management"
 }
