@@ -2,7 +2,14 @@ const app = require('./app');
 
 const uniqueId = "bla"
 
-app.service('kanban').create({
+let promiseUsers = app.service('users').create({
+  "firstname": "Momme",
+  "lastname": "Jürgensen",
+  "email": "momme@juergensen.me",
+  "username": "momme.juergensen",
+  "password": "123"
+})
+let promiseKanban = app.service('kanban').create({
   "title": "A cool kanban board",
   "description": "It is very cool :)"
 })
