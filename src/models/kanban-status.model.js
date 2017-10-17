@@ -7,9 +7,8 @@ module.exports = function (app) {
   const { Schema } = mongooseClient;
   const kanbanStatus = new Schema({
     name: { type: String, required: true },
-    kanban: { type: Schema.Types.ObjectId, ref: 'kanban', required: true },
-    color: { type: String, required: true, default: '#e0e0e0' },
-    sort: { type: Number, require: false, default: 0},
+    column: { type: Number, require: true, default: 0},
+    project: { type: Schema.Types.ObjectId, ref: 'project', required: true },
 
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }

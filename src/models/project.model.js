@@ -8,8 +8,8 @@ module.exports = function (app) {
   const project = new Schema({
     name: { type: String, required: true, unique: true },
     shortName: { type: String, required: true, unique: true },
-    kanban: { type: Schema.Types.ObjectId, ref: 'kanban', required: false },
     description: { type: String, required: false, default: '' },
+    owner: { type: Schema.Types.ObjectId, ref: 'users', required: true },
 
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }

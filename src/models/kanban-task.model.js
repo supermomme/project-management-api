@@ -6,10 +6,14 @@ module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
   const { Schema } = mongooseClient;
   const kanbanTask = new Schema({
-    title: { type: String, required: true },
+    name: { type: String, required: true },
     description: { type: String, required: false, default: '' },
     priority: { type: Number, required: false, default: 0 },
+    tags: [{ type: String }],
+
     'kanban-status': { type: Schema.Types.ObjectId, ref: 'kanban-status', required: true },
+    creator: { type: Schema.Types.ObjectId, ref: 'users', required: true },
+    assignee: { type: Schema.Types.ObjectId, ref: 'users', required: false, default: null },
 
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
