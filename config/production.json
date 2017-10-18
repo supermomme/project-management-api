@@ -1,5 +1,15 @@
 {
   "host": "VIRTUAL_HOST",
   "port": "PORT",
-  "mongodb": "mongodb://mongo:27017/project_management"
+  "mongodb": "mongodb://mongo:27017/project_management",
+  "mailer": {
+    "host": "MAILER_HOST",
+    "port": 587,
+    "secure": false,
+    "auth": {
+      "user": "MAILER_USER",
+      "pass": "MAILER_PASS"
+    }
+  },
+  "activationBaseUrl":"ACTIVATION_BASE_URL"
 }

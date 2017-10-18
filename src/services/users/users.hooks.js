@@ -3,6 +3,8 @@ const commonHooks = require('feathers-hooks-common');
 
 const { hashPassword } = require('feathers-authentication-local').hooks;
 
+const mailActivationLink = require('../../hooks/mail-activation-link');
+
 module.exports = {
   before: {
     all: [],
@@ -23,7 +25,7 @@ module.exports = {
     ],
     find: [],
     get: [],
-    create: [],
+    create: [mailActivationLink()],
     update: [],
     patch: [],
     remove: []

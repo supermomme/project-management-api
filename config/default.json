@@ -30,5 +30,16 @@
       "usernameField": "\\username",
       "passwordField": "password"
     }
-  }
+  },
+  "mailer": {
+    "host": "",
+    "port": 587,
+    "secure": false,
+    "auth": {
+      "user": "",
+      "pass": ""
+    },
+    "from":""
+  },
+  "activationBaseUrl":"https://localhost:4200/activate"
 }
